@@ -1,8 +1,6 @@
 services:
   devcontainer:
     image: mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye
-    environment:
-      NPM_CONFIG_REGISTRY: http://verdaccio:4873
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
