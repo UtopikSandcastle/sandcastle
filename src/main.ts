@@ -1,6 +1,6 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { initFederation } from '@angular-architects/module-federation';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+initFederation('/assets/mf.manifest.json')
+  .catch((err: any) => console.error(err))
+  .then((_: any) => import('./bootstrap'))
+  .catch((err: any) => console.error(err));
