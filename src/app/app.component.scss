@@ -3,17 +3,11 @@
 }
 
 .toolbar-title-button {
-  background-color: transparent; /* Makes the button background transparent */
-  border: none; /* Removes border */
-  box-shadow: none; /* Removes shadow if any */
-  font-size: 24px; /* Adjust font size as needed */
-  margin-left: 10px; /* Adjust spacing as needed */
-  align-self: center; /* Aligns vertically center */
+  font-family:titillium web,sans-serif;
+  font-size:1.5rem!important;
+  padding-top:0!important;
+  margin-right:2rem!important;
 }
-
-// .toolbar-title-button:hover {
-//   background-color: rgba(255, 255, 255, 1.00); /* Optional: Adds hover effect */
-// }
 
 .spacer {
   flex: 1 1 auto;

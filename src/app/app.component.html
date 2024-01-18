@@ -1,12 +1,14 @@
 <mat-toolbar color="primary">
-  <a routerLink="/" class="toolbar-logo">
+  <a [routerLink]="['']" class="toolbar-logo">
     <img src="assets/logo.png" alt="Logo">
   </a>
-  <button mat-button class="toolbar-title-button" routerLink="/">
+  <button mat-button class="toolbar-title-button" [routerLink]="['']">
     {{title | titlecase}}
   </button>
-  <!-- <button mat-button routerLink="/link1">Link 1</button> -->
-  <!-- Additional links or buttons -->
+  <button mat-button *ngFor="let remote of remotes" [routerLink]="remote.routePath">
+    {{remote.displayName}}
+  </button>
+
   <span class="spacer"></span>
 </mat-toolbar>
 

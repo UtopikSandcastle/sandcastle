@@ -1,14 +1,11 @@
 import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
-    path: 'security',
-    loadComponent: () =>
-      loadRemoteModule({
-        remoteName: 'security',
-        exposedModule: './Component'
-      })
-      .then((m: { AppComponent: any; }) => m.AppComponent)
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
   }
 ];
