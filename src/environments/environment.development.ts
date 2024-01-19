@@ -1,3 +1,3 @@
 export const environment = {
-  mfManifest: 'mf.manifest.development.json'
+  mfManifest: '/assets/mf.manifest.development.json'
 };

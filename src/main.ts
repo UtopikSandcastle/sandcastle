@@ -1,6 +1,7 @@
 import { initFederation } from '@angular-architects/module-federation';
+import { environment } from './environments/environment.development';
 
-initFederation('/assets/mf.manifest.json')
-  .catch((err: any) => console.error(err))
-  .then((_: any) => import('./bootstrap'))
-  .catch((err: any) => console.error(err));
+initFederation(environment.mfManifest)
+  .catch((err: unknown) => console.error(err))
+  .then(() => import('./bootstrap'))
+  .catch((err: unknown) => console.error(err));

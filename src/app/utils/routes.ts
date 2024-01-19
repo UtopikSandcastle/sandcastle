@@ -12,9 +12,9 @@ export function buildRoutes(options: CustomManifest): Routes {
         loadRemoteModule({
           type: 'manifest',
           remoteName: key,
-          exposedModule: entry.exposedModule
+          exposedModule: './routes'
         })
-          .then(m => m[entry.ngModuleName])
+          .then(m => m['routes'])
     }
   });
 

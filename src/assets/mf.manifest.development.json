@@ -1,9 +1,11 @@
 {
   "security": {
+    "remoteName": "security",
     "remoteEntry": "http://localhost:4255/remoteEntry.js",
-    "exposedModule": "./routes",
+    "exposedModule": "./AppComponent",
     "displayName": "Security",
     "routePath": "security",
-    "ngModuleName": "routes"
+    "ngModuleName": "AppComponent",
+    "icon": "assets/icons/shield-halved-solid.svg"
   }
 }
