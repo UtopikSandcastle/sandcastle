@@ -6,6 +6,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { Router, RouterOutlet } from '@angular/router';
 import { getManifest } from "@angular-architects/module-federation";
 import { RouterModule } from "@angular/router";
+import { MatMenuModule } from "@angular/material/menu";
 
 import { buildRoutes } from './utils/routes';
 import { CustomManifest, CustomRemoteConfig } from './utils/config';
@@ -14,6 +15,7 @@ import { CustomManifest, CustomRemoteConfig } from './utils/config';
   selector: 'app-root',
   standalone: true,
   imports: [
+    MatMenuModule,
     CommonModule,
     MatButtonModule,
     MatIconModule,
