@@ -5,9 +5,10 @@
   <button mat-button class="toolbar-title-button" [routerLink]="['']">
     {{title | titlecase}}
   </button>
-  <button mat-button *ngFor="let remote of remotes" [routerLink]="remote.routePath">
+  <!-- <button mat-button *ngFor="let remote of remotes" [routerLink]="remote.routePath">
     {{remote.displayName}}
-  </button>
+  </button> -->
+  <app-menu-item></app-menu-item>
 
   <span class="spacer"></span>
 </mat-toolbar>

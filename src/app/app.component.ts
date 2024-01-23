@@ -10,6 +10,7 @@ import { MatMenuModule } from "@angular/material/menu";
 
 import { buildRoutes } from './utils/routes';
 import { CustomManifest, CustomRemoteConfig } from './utils/config';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 @Component({
   selector: 'app-root',
@@ -22,27 +23,36 @@ import { CustomManifest, CustomRemoteConfig } from './utils/config';
     MatToolbarModule,
     RouterModule,
     RouterOutlet,
+    MenuItemComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent{
   title = 'sandcastle';
 
   remotes: CustomRemoteConfig[] = [];
 
   constructor(
     private router: Router) {
+      const manifest = getManifest<CustomManifest>();
+
+      // Hint: Move this to an APP_INITIALIZER 
+      //  to avoid issues with deep linking
+      const routes = buildRoutes(manifest);
+      this.router.resetConfig(routes);
+  
+      this.remotes = Object.values(manifest);
   }
 
-  async ngOnInit(): Promise<void> {
-    const manifest = getManifest<CustomManifest>();
+  // async ngOnInit(): Promise<void> {
+  //   const manifest = getManifest<CustomManifest>();
 
-    // Hint: Move this to an APP_INITIALIZER 
-    //  to avoid issues with deep linking
-    const routes = buildRoutes(manifest);
-    this.router.resetConfig(routes);
+  //   // Hint: Move this to an APP_INITIALIZER 
+  //   //  to avoid issues with deep linking
+  //   const routes = buildRoutes(manifest);
+  //   this.router.resetConfig(routes);
 
-    this.remotes = Object.values(manifest);
-  }
+  //   this.remotes = Object.values(manifest);
+  // }
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo npm install -g npm@latest @angular/cli
-echo "source <(ng completion script)" >> /home/node/.bashrc
+# sudo apt-get update
+# sudo apt-get install -y xdg-utils
 
+echo "source <(ng completion script)" >> /home/node/.bashrc
 yarn install

@@ -1,21 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CustomManifest, CustomRemoteConfig } from '../../utils/config';
+import { getManifest } from "@angular-architects/module-federation";
 import { MatButtonModule } from "@angular/material/button";
 import { MatGridListModule } from "@angular/material/grid-list";
-import { getManifest } from "@angular-architects/module-federation";
 import { MatIconModule } from "@angular/material/icon";
-
-import { CustomManifest, CustomRemoteConfig } from '../utils/config';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    MatIconModule,
     CommonModule,
     MatButtonModule,
     MatGridListModule,
+    MatIconModule,
     RouterModule,
   ],
   templateUrl: './home.component.html',
