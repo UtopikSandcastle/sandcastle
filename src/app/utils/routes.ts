@@ -11,14 +11,18 @@ export function buildRoutes(options: CustomManifest): Routes {
     const entry = options[key];
 
     lazyRoutes.push({
+      title: entry.displayName,
       path: entry.routePath,
       loadChildren: () =>
         loadRemoteModule({
           type: 'manifest',
           remoteName: entry.remoteName,
-          exposedModule: entry.exposedModule
+          exposedModule: entry.exposedModule,
         })
           .then(m => m[entry.ngModuleName])
+          .catch(error => {
+            console.error(error);
+          })
     });
   }
 

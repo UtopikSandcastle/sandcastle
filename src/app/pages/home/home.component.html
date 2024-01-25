@@ -4,7 +4,6 @@
 
       <mat-grid-tile *ngFor="let remote of remotes">
         <div class="custom-button" [routerLink]="remote.routePath">
-          <!-- <img [src]="remote.icon" alt="Image Description"> -->
           <mat-icon class="material-symbols-outlined custom-icon" fontIcon="shield"></mat-icon>
           <span>{{remote.displayName}}</span>
         </div>

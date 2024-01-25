@@ -21,7 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = 'sandcastle';
+  title = 'Sandcastle';
 
   remotes: CustomRemoteConfig[] = [];
 
@@ -37,6 +37,6 @@ export class AppComponent implements OnInit {
     const routes = buildRoutes(manifest);
     this.router.resetConfig(routes);
 
-    this.remotes = Object.values(manifest);
+    // this.remotes = Object.values(manifest);
   }
 }
