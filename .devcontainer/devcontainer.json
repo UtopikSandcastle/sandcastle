@@ -5,7 +5,8 @@
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/angular-cli:2": {}
+    "ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
+    "ghcr.io/kreemer/features/chrometesting:1": {}
   },
   "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
   "otherPortsAttributes": {
