@@ -35,7 +35,7 @@ jobs:
   #     - run: yarn test --watch=false
 
   docker:
-    needs: test
+    needs: setup
     uses: UtopikGoodies/github-workflow/.github/workflows/docker.yml@update
     with:
       registry: ${{ needs.setup.outputs.docker-registry }}
