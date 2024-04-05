@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY . .
-RUN yarn build
+RUN yarn build --output-path ./dist
 
 # Stage 2: Serve the application from Nginx
 FROM nginx:1.25

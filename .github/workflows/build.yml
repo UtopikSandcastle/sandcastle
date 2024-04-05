@@ -17,8 +17,25 @@ jobs:
       - name: Set outputs
         run: echo "Set outputs"
       
-  docker:
+  test:
     needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20
+
+      - name: Run tests
+        run: echo "Run tests"
+      - run: yarn install
+      - run: yarn test --watch=false
+
+  docker:
+    needs: test
     uses: UtopikGoodies/github-workflow/.github/workflows/docker.yml@update
     with:
       registry: ${{ needs.setup.outputs.docker-registry }}
