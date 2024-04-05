@@ -13,7 +13,10 @@ jobs:
     outputs:
       docker-registry: ${{ startsWith(github.ref, 'refs/tags/v') && 'docker.io' || 'ghcr.io' }}
       docker-username: ${{ startsWith(github.ref, 'refs/tags/v') && secrets.DOCKERHUB_USERNAME || github.actor }}
-      dockerfile-directory: "src/AccessControlAPI"
+      dockerfile-directory: "src"
+    steps:
+      - name: Set outputs
+        run: echo "Set outputs"
       
   docker:
     needs: setup
