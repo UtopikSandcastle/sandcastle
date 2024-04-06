@@ -36,7 +36,7 @@ jobs:
 
   docker:
     needs: setup
-    uses: UtopikGoodies/github-workflow/.github/workflows/docker.yml@update
+    uses: UtopikGoodies/github-workflow/.github/workflows/docker.yml@main
     with:
       registry: ${{ needs.setup.outputs.docker-registry }}
       username: ${{ needs.setup.outputs.docker-username }}
