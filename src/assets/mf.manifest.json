@@ -1,0 +1,10 @@
+{
+  "security": {
+    "remoteName": "security",
+    "remoteEntry": "http://security.sandcastle-dev.utopiklab.net/remoteEntry.js",
+    "exposedModule": "./AppComponent",
+    "displayName": "Security",
+    "routePath": "security",
+    "ngModuleName": "AppComponent"
+  }
+}

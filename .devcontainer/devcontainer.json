@@ -4,19 +4,22 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-	
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"Angular.ng-template",
-				"dbaeumer.vscode-eslint",
-				"ms-vscode.live-server"
-			]
-		}
-	},
-
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
+    "ghcr.io/kreemer/features/chrometesting:1": {}
+  },
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "otherPortsAttributes": {
+    "onAutoForward": "silent"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.live-server"
+      ]
+    }
+  },
   "shutdownAction": "stopCompose"
 }

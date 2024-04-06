@@ -1,11 +1,5 @@
-<mat-toolbar color="primary">
-  <a routerLink="/" class="toolbar-logo">
-    <img src="assets/logo.png" alt="Logo">
-  </a>
-  <button mat-button class="toolbar-title-button" routerLink="/">
-    {{title | titlecase}}
-  </button>
-  <!-- <button mat-button routerLink="/link1">Link 1</button> -->
-  <!-- Additional links or buttons -->
-  <span class="spacer"></span>
-</mat-toolbar>
+<app-navbar [title]="title"></app-navbar>
+
+<!-- <div class="content"> -->
+<router-outlet></router-outlet>
+<!-- </div> -->

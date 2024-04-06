@@ -1,0 +1,14 @@
+<div class="background-image">
+  <div class="grid-container">
+    <mat-grid-list cols="3" gutterSize="10px">
+
+      <mat-grid-tile *ngFor="let remote of remotes">
+        <div class="custom-button" [routerLink]="remote.routePath">
+          <mat-icon class="material-symbols-outlined custom-icon" fontIcon="shield"></mat-icon>
+          <span>{{remote.displayName}}</span>
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </div>
+</div>
